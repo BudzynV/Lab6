@@ -12,7 +12,8 @@ public class TesyMyDB  {
         Connection conn = db.getConnection();
         if (conn != null)
             System.out.println("Połączenie z baza nawiazane");
-
+        db.closeConnection();
+            System.out.println("Połączenie z baza zakończone");
     }
 
 

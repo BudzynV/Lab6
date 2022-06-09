@@ -41,7 +41,7 @@ public class MyDB {
             System.out.println("Komunikat błędu" + e.getMessage());
             conn = null;
         }
-        System.out.println("Connected to database" + database);
+        System.out.println("Connected to database " + database);
     }
     public Connection getConnection(){
         if (conn ==  null)
@@ -55,7 +55,19 @@ public class MyDB {
 
     public void setPassword(String root) {
     }
-}
+
+    public void closeConnection(){
+        if (conn != null)
+            try {
+                conn.close();
+            }catch (SQLException e) {
+                System.out.println("Błąd przy łączeniu z baza " + e.getMessage());
+            }
+        conn = null;
+            }
+    }
+
+
 
 
 
